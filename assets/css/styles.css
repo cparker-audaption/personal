@@ -1482,3 +1482,368 @@ footer { padding:80px; background:var(--charcoal); border-top:1px solid #444; di
   .orch-center{grid-column:1 / -1;justify-self:center;margin:4px 0;}
   .cdp-core{width:min(100%,260px);height:120px;}
 }
+
+
+
+/* === FINAL ROUND 3 OVERRIDES === */
+
+/* prevent stray raw section labels from showing if present */
+body > :is(div,section,nav):not([class]):not([id]){display:none !important;}
+
+/* hero update */
+.hero-stat-value{white-space:nowrap;}
+
+/* balanced marquee */
+.marquee-section{
+  padding:18px 0 !important;
+  line-height:1 !important;
+  position:relative;
+  z-index:3;
+}
+.marquee-item{
+  align-items:center !important;
+  min-height:18px;
+}
+#pillars{
+  border-top:none !important;
+  margin-top:0 !important;
+  padding-top:88px !important;
+  padding-bottom:88px !important;
+}
+#pillars::before,
+#pillars::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* desktop pillar logos larger and less padded */
+.pillar-logo-row{
+  gap:16px;
+  margin-bottom:18px;
+}
+.pillar-brand-logo{
+  height:40px !important;
+  max-height:none !important;
+  padding:4px 10px !important;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid var(--border);
+  filter:none !important;
+  opacity:1 !important;
+}
+.pillar-brand-logo.logo-gap{
+  height:44px !important;
+}
+
+/* keep pillar footer metric visible and aligned */
+.pillar-footer{
+  align-items:flex-end;
+}
+.pillar-footer > div:first-child{
+  min-width:0;
+}
+
+/* QXO story tab panels */
+.qxo-panel{
+  overflow:visible !important;
+  height:auto !important;
+}
+.qxo-panel > section{
+  height:auto !important;
+  min-height:0 !important;
+}
+.qxo-panel .section-num{
+  display:none !important;
+}
+.qxo-panel .section-header{
+  margin-bottom:32px !important;
+  justify-content:flex-start !important;
+}
+.qxo-panel .section-line{
+  display:none !important;
+}
+.qxo-panel .section-title{
+  font-size:clamp(22px,2vw,30px) !important;
+  line-height:1.05;
+}
+#data-orchestration .section-header,
+#segmentation .section-header,
+#qxo-contribution-content .section-header{
+  margin-left:0 !important;
+}
+
+/* remove top padding on segmentation tab and unify background */
+#segmentation{
+  padding-top:0 !important;
+  background:var(--off-black) !important;
+}
+.rfm-right{
+  background:transparent !important;
+}
+
+/* data orchestration panel should auto-size */
+#data-orchestration{
+  padding:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:visible !important;
+  background:var(--off-black);
+}
+#data-orchestration > div:first-child{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.orch-container{
+  height:auto !important;
+  min-height:620px;
+  overflow:visible !important;
+}
+
+/* segmentation cards */
+.rfm-segments-title{
+  font-family:Manrope,sans-serif;
+  font-size:16px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.rfm-segments-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  background:transparent !important;
+  border:none !important;
+}
+.rfm-seg{
+  background:var(--off-black) !important;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px 18px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.03);
+}
+.seg-bar-wrap{
+  background:#edf1f3;
+  border-radius:999px;
+  overflow:hidden;
+  height:7px;
+  margin-top:14px;
+}
+.seg-bar{height:100%;border-radius:999px;}
+.seg-name{font-weight:700;}
+.seg-desc{color:var(--muted); line-height:1.65; margin-top:8px;}
+.seg-bar-label{margin-top:8px; font-size:11px; color:var(--muted);}
+
+/* NYSE row should match metric rows */
+.timeline-metrics{
+  position:relative;
+  overflow:visible !important;
+  border-radius:0 !important;
+}
+.timeline-featured-link{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  width:100%;
+  text-decoration:none !important;
+  color:inherit;
+  background:var(--off-black) !important;
+  border:none !important;
+  border-bottom:1px solid var(--border) !important;
+  border-top:none !important;
+  border-radius:0 !important;
+  padding:16px 18px !important;
+  margin:0 !important;
+  box-shadow:none !important;
+}
+.timeline-featured-link:hover,
+.timeline-featured-link:focus,
+.timeline-featured-link:visited{
+  text-decoration:none !important;
+  color:inherit;
+}
+.timeline-featured-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.timeline-featured-icon{
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background:rgba(47,163,127,.10);
+  color:var(--gold);
+  font-size:13px;
+  font-weight:800;
+  flex:0 0 28px;
+}
+.timeline-featured-text{
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none !important;
+}
+.timeline-featured-cta{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none !important;
+  white-space:nowrap;
+}
+.timeline-featured-star{
+  top:-10px !important;
+  right:-10px !important;
+  z-index:6;
+}
+.metric-row:first-of-type{
+  border-top:none !important;
+}
+
+/* hide advisory clients section */
+#impact{
+  display:none !important;
+}
+
+/* mobile/tablet fixes */
+@media (max-width: 1024px){
+  .rfm-segments-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 768px){
+  #pillars,
+  .qxo-tabs-shell,
+  #timeline,
+  #expertise,
+  #education{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .pillar-footer{
+    align-items:flex-start !important;
+    text-align:left !important;
+  }
+  .pillar-footer > div:first-child,
+  .pillar-metric,
+  .pillar-metric-label,
+  .pillar-link{
+    text-align:left !important;
+    margin-left:0 !important;
+    justify-content:flex-start !important;
+  }
+  .pillar-brand-logo{
+    height:40px !important;
+    padding:0 !important;
+  }
+  .pillar-brand-logo.logo-gap{
+    height:44px !important;
+  }
+
+  #data-orchestration{
+    padding:0 !important;
+  }
+  #data-orchestration > div:first-child{
+    padding:0 !important;
+    margin-bottom:16px;
+  }
+  .orch-container{
+    min-height:0 !important;
+    height:auto !important;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:12px !important;
+    align-items:stretch !important;
+    padding:0 !important;
+    overflow:visible !important;
+  }
+  .orch-svg{
+    display:none !important;
+  }
+  .orch-source,
+  .orch-output,
+  .orch-center{
+    position:relative !important;
+    inset:auto !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+    width:100% !important;
+    opacity:1 !important;
+    margin:0 !important;
+  }
+  .orch-source{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+    gap:10px !important;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--off-black);
+    padding:12px 12px;
+    min-width:0;
+  }
+  .orch-label{
+    max-width:none !important;
+    text-align:left !important;
+    font-size:9px;
+  }
+  .orch-center{
+    grid-column:1 / -1 !important;
+    justify-self:center !important;
+    margin:4px 0 !important;
+  }
+  .cdp-core{
+    width:min(100%,260px) !important;
+    height:116px !important;
+  }
+  .orch-output{
+    width:100% !important;
+  }
+  .output-pill{
+    width:100% !important;
+    justify-content:flex-start !important;
+    border-radius:14px !important;
+  }
+
+  .qxo-tabs-shell{
+    padding-bottom:0 !important;
+  }
+  #qxo-contribution-content,
+  #segmentation{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .story-canvas{
+    height:auto !important;
+    min-height:520px;
+  }
+
+  .edu-grid{
+    grid-template-columns:1fr !important;
+  }
+  .edu-card,
+  .edu-text,
+  .edu-degree,
+  .edu-field,
+  .edu-school{
+    min-width:0;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+
+  .timeline-featured-link{
+    width:100% !important;
+  }
+  .timeline-featured-cta{
+    font-size:11px;
+  }
+}
